@@ -1,15 +1,14 @@
-import modules
+from modules import DataManager
 from typing import List
 
-modules.init()
-data = modules.get_data_string("3")
+data = DataManager(__file__).get_data_string()
 
 compareList: List[float] = []
 gamma = "0b"
 epsilon = "0b"
 
 for i in range(0, len(data[0])):
-    compareList.append(-len(data)/2)
+    compareList.append(-len(data) / 2)
     for val in data:
         compareList[i] += float(val[i])
     if compareList[i] > 0:

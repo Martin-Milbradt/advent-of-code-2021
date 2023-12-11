@@ -1,4 +1,4 @@
-import modules
+from modules import DataManager
 from typing import List
 
 
@@ -19,12 +19,12 @@ def most_common_1(binary_list: List[str]) -> str:
         val = "1"
     else:
         val = "0"
-    print(f"{val} is most common: {ones}/{length} are \"1\"")
+    print(f'{val} is most common: {ones}/{length} are "1"')
     return val
 
 
-modules.init()
-data = modules.get_data_string("3")
+data = DataManager(__file__).get_data_string()
+
 
 oxygen_candidates = data.copy()
 co2_candidates = data.copy()

@@ -1,7 +1,7 @@
-import modules
+from modules import DataManager
 
-modules.init()
-data = modules.get_data("1", int)
+data = DataManager(__file__).get_data(int)
+
 last = False
 increases = 0
 for val in data:

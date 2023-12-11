@@ -1,7 +1,7 @@
-import modules
+from modules import DataManager
 
-modules.init()
-data = modules.get_data("1", int)
+data = DataManager(__file__).get_data(int)
+
 increases = 0
 for i in range(2, len(data)):
     increases += data[i] > data[i - 3]

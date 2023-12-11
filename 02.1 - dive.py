@@ -1,7 +1,7 @@
-import modules
+from modules import DataManager
 
-modules.init()
-data = modules.get_data_string("2")
+data = DataManager(__file__).get_data_string()
+
 forward = 0
 depth = 0
 
@@ -12,9 +12,9 @@ for command in data:
             forward += int(distance)
         case "down":
             depth += int(distance)
-        case "up":    
+        case "up":
             depth -= int(distance)
         case _:
             print(f"Error, direction {direction} unknown")
 
-print(depth*forward)
+print(depth * forward)
